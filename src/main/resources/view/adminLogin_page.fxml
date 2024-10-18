@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="backgroundColor" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminLogin_controller">
+   <children>
+      <Label layoutX="187.0" layoutY="32.0" text="Clothify">
+         <font>
+            <Font name="System Bold" size="66.0" />
+         </font>
+      </Label>
+      <AnchorPane layoutX="102.0" layoutY="128.0" prefHeight="221.0" prefWidth="416.0" style="-fx-background-color: orange; -fx-background-radius: 15;">
+         <children>
+            <JFXTextField layoutX="74.0" layoutY="52.0" prefHeight="25.0" prefWidth="268.0" promptText="username" />
+            <JFXPasswordField layoutX="74.0" layoutY="98.0" prefHeight="25.0" prefWidth="268.0" promptText="password" />
+            <Label layoutX="152.0" layoutY="14.0" text="login as an Admin..." />
+            <JFXButton layoutX="185.0" layoutY="158.0" onAction="#btnLogin" style="-fx-background-color: #90EE90; -fx-background-radius: 5;" text="Login">
+               <effect>
+                  <Shadow />
+               </effect>
+            </JFXButton>
+            <JFXButton layoutX="99.0" layoutY="194.0" text="forgot password? click here to recover" textFill="#2f00ff" underline="true" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

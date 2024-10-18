@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="463.0" prefWidth="600.0" styleClass="backgroundColor" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.orders_managementController">
+   <children>
+      <ImageView blendMode="DARKEN" fitHeight="68.0" fitWidth="70.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/order_icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="90.0" layoutY="28.0" text="Orders">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff48" height="188.0" layoutX="17.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="564.0" />
+      <JFXTextField layoutX="46.0" layoutY="140.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="item code" />
+      <JFXTextField layoutX="291.0" layoutY="140.0" prefHeight="25.0" prefWidth="115.0" promptText="item name" text="price (Rs)" />
+      <JFXTextField layoutX="46.0" layoutY="187.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="item " />
+      <JFXButton buttonType="RAISED" layoutX="483.0" layoutY="229.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Order" />
+      <Label layoutX="291.0" layoutY="191.0" text="payment type :" />
+      <JFXRadioButton layoutX="369.0" layoutY="192.0" text="cash" />
+      <JFXRadioButton layoutX="434.0" layoutY="192.0" text="card" />
+      <Label layoutX="420.0" layoutY="90.0" text="Total (Rs) :">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="489.0" layoutY="90.0" text="00">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font>
+      </Label>
+      <TableView layoutX="17.0" layoutY="282.0" prefHeight="157.0" prefWidth="502.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="order id" />
+          <TableColumn prefWidth="75.0" text="item code" />
+            <TableColumn prefWidth="102.6666259765625" text="customer" />
+            <TableColumn prefWidth="60.00006103515625" text="price" />
+            <TableColumn prefWidth="62.0" text="payment" />
+            <TableColumn prefWidth="56.6666259765625" text="quantity" />
+            <TableColumn prefWidth="70.0" text="total" />
+        </columns>
+      </TableView>
+      <JFXButton buttonType="RAISED" layoutX="522.0" layoutY="413.0" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="refresh" />
+      <JFXTextField layoutX="46.0" layoutY="229.0" prefHeight="25.0" prefWidth="115.0" promptText="item name" text="customer id" />
+      <JFXTextField layoutX="181.0" layoutY="229.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="customer name" />
+      <JFXTextField layoutX="431.0" layoutY="140.0" prefHeight="25.0" prefWidth="115.0" promptText="item name" text="quantity" />
+   </children>
+</AnchorPane>

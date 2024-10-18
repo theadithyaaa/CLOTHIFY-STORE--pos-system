@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="657.0" styleClass="backgroundColor" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.employee_dashboard">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff62" height="56.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="657.0" />
+      <ImageView blendMode="DARKEN" fitHeight="64.0" fitWidth="70.0" layoutX="9.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/user_icon.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="88.0" layoutY="13.0" text="User">
+         <font>
+            <Font name="System Bold" size="27.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff74" height="301.0" layoutX="17.0" layoutY="79.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="275.0" />
+      <Label layoutX="30.0" layoutY="88.0" text="User Profile" />
+      <Label layoutX="30.0" layoutY="125.0" text="id :" />
+      <Label layoutX="24.0" layoutY="212.0" text="company :" />
+      <Label layoutX="29.0" layoutY="182.0" text="email :" />
+      <Label layoutX="28.0" layoutY="155.0" text="name :" />
+      <Label layoutX="86.0" layoutY="212.0" text="company name" />
+      <Label layoutX="70.0" layoutY="182.0" text="user email" />
+      <Label layoutX="70.0" layoutY="155.0" text="username" />
+      <Label layoutX="57.0" layoutY="125.0" text="id number" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff74" height="131.0" layoutX="31.0" layoutY="235.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="247.0" />
+      <Label layoutX="34.0" layoutY="235.0" text="password setting" />
+      <JFXPasswordField layoutX="38.0" layoutY="261.0" prefHeight="25.0" prefWidth="230.0" promptText="new password" />
+      <JFXPasswordField layoutX="38.0" layoutY="301.0" prefHeight="25.0" prefWidth="230.0" promptText="confirm new password" />
+      <JFXButton layoutX="168.0" layoutY="333.0" text="change password" textFill="#2900ff" underline="true" />
+      <ImageView blendMode="DARKEN" fitHeight="67.0" fitWidth="57.0" layoutX="366.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/inventory_icon.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="423.0" layoutY="116.0" prefHeight="25.0" prefWidth="109.0" text="Inventory">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <ImageView blendMode="DARKEN" fitHeight="67.0" fitWidth="57.0" layoutX="366.0" layoutY="192.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/supplier_icon.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="423.0" layoutY="211.0" prefHeight="25.0" prefWidth="109.0" text="Suppliers">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+      <ImageView blendMode="DARKEN" fitHeight="67.0" fitWidth="57.0" layoutX="366.0" layoutY="285.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/order_icon.png" />
+         </image>
+      </ImageView>
+      <JFXButton layoutX="423.0" layoutY="304.0" prefHeight="36.0" prefWidth="90.0" text="Orders">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

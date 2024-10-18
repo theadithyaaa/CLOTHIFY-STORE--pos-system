@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="514.0" styleClass="backgroundColor" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.home_pageController">
+   <children>
+      <Label layoutX="151.0" layoutY="39.0" text="Clothify" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="80.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="1.0" endY="0.785488965007409" startX="0.9810725311375567" startY="0.0946372239747634">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.2621564567089081" blue="1.0" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Label>
+      <Label layoutX="151.0" layoutY="31.0" text="welcome to... " textFill="#0035ff">
+         <font>
+            <Font name="System Italic" size="23.0" />
+         </font>
+      </Label>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff48" height="144.0" layoutX="203.0" layoutY="177.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
+      <Label layoutX="269.0" layoutY="191.0" text="continue as" />
+      <JFXButton buttonType="RAISED" layoutX="255.0" layoutY="222.0" onAction="#btnAdmin" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Admin" />
+      <JFXButton buttonType="RAISED" layoutX="255.0" layoutY="264.0" onAction="#btnEmployee" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Employee" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff34" height="34.0" layoutY="366.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="600.0" />
+      <Label layoutX="237.0" layoutY="374.0" text="Clothify store (PVT) Ltd." />
+      <Label layoutX="448.0" layoutY="374.0" text="clothify_store@gmail.com" />
+      <Label layoutX="14.0" layoutY="374.0" text="+94 123 456 789 " />
+   </children>
+</AnchorPane>
