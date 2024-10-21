@@ -4,15 +4,35 @@ import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 
 public class admin_dashboardController {
 
     @FXML
-    private TableColumn<?, ?> colempid;
+    private TableColumn<?, ?> colcategory;
 
     @FXML
-    private TableView<?> tblemp;
+    private TableColumn<?, ?> colcompany;
+
+    @FXML
+    private TableColumn<?, ?> colcontact;
+
+    @FXML
+    private TableColumn<?, ?> colemail;
+
+    @FXML
+    private TableColumn<?, ?> colid;
+
+    @FXML
+    private TableColumn<?, ?> colname;
+
+    @FXML
+    private TableColumn<?, ?> colquantity;
+
+    @FXML
+    private TableColumn<?, ?> colsize;
+
+    @FXML
+    private TableColumn<?, ?> colsupplier;
 
     @FXML
     private JFXTextField txt_empid;

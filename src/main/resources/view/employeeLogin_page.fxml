@@ -17,15 +17,15 @@
       </Label>
       <AnchorPane layoutX="92.0" layoutY="118.0" prefHeight="221.0" prefWidth="416.0" style="-fx-background-color: orange; -fx-background-radius: 15;">
          <children>
-            <JFXTextField layoutX="74.0" layoutY="52.0" prefHeight="25.0" prefWidth="268.0" promptText="username" />
-            <JFXPasswordField layoutX="74.0" layoutY="98.0" prefHeight="25.0" prefWidth="268.0" promptText="password" />
+            <JFXTextField fx:id="txtempusername" layoutX="74.0" layoutY="52.0" prefHeight="25.0" prefWidth="268.0" promptText="username" />
+            <JFXPasswordField fx:id="txtemppassword" layoutX="74.0" layoutY="98.0" prefHeight="25.0" prefWidth="268.0" promptText="password" />
             <Label layoutX="152.0" layoutY="14.0" text="login as an employee..." />
             <JFXButton layoutX="185.0" layoutY="158.0" onAction="#btnLogin" style="-fx-background-color: #90EE90; -fx-background-radius: 5;" text="Login">
                <effect>
                   <Shadow />
                </effect>
             </JFXButton>
-            <JFXButton layoutX="99.0" layoutY="194.0" text="forgot password? click here to recover" textFill="#2f00ff" underline="true" />
+            <JFXButton layoutX="99.0" layoutY="194.0" onAction="#btnemppasswordrecover" text="forgot password? click here to recover" textFill="#2f00ff" underline="true" />
          </children>
       </AnchorPane>
    </children>

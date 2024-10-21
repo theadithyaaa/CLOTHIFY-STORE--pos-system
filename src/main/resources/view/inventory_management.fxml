@@ -11,7 +11,6 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="878.0" styleClass="backgroundColor" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.inventory_managementController">
    <children>
       <ImageView blendMode="DARKEN" fitHeight="70.0" fitWidth="58.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
@@ -25,24 +24,24 @@
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff48" height="318.0" layoutX="14.0" layoutY="72.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="317.0" />
-      <JFXTextField layoutX="43.0" layoutY="136.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" />
-      <JFXTextField layoutX="43.0" layoutY="174.0" prefHeight="25.0" prefWidth="220.0" promptText="q" text="category" />
-      <JFXTextField layoutX="43.0" layoutY="212.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="size" />
-      <JFXTextField layoutX="43.0" layoutY="258.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="quantity" />
-      <JFXTextField layoutX="43.0" layoutY="297.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="supplier" />
-      <JFXButton buttonType="RAISED" layoutX="43.0" layoutY="349.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Add" />
-      <JFXButton buttonType="RAISED" layoutX="133.0" layoutY="349.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="update" />
-      <JFXButton buttonType="RAISED" layoutX="224.0" layoutY="349.0" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Remove" />
+      <JFXTextField fx:id="txtitemname" layoutX="43.0" layoutY="136.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" />
+      <JFXTextField fx:id="txtcategory" layoutX="43.0" layoutY="174.0" prefHeight="25.0" prefWidth="220.0" promptText="q" text="category" />
+      <JFXTextField fx:id="txtsize" layoutX="43.0" layoutY="212.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="size" />
+      <JFXTextField fx:id="txtquantity" layoutX="43.0" layoutY="258.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="quantity" />
+      <JFXTextField fx:id="txtsupplier" layoutX="43.0" layoutY="297.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="supplier" />
+      <JFXButton buttonType="RAISED" layoutX="43.0" layoutY="349.0" onAction="#btnaddinventory" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Add" />
+      <JFXButton buttonType="RAISED" layoutX="133.0" layoutY="349.0" onAction="#btnupdateinventory" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="update" />
+      <JFXButton buttonType="RAISED" layoutX="224.0" layoutY="349.0" onAction="#btnremoveinventory" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Remove" />
       <TableView layoutX="338.0" layoutY="73.0" prefHeight="272.0" prefWidth="521.0">
          <columns>
-            <TableColumn prefWidth="44.000030517578125" text="Id" />
-            <TableColumn prefWidth="122.66668701171875" text="Name" />
-            <TableColumn prefWidth="151.33334350585938" text="category" />
-            <TableColumn prefWidth="78.6666259765625" text="quantity" />
-            <TableColumn prefWidth="37.33331298828125" text="size" />
-            <TableColumn prefWidth="83.33331298828125" text="supplier" />
+            <TableColumn fx:id="colid" prefWidth="44.000030517578125" text="Id" />
+            <TableColumn fx:id="colname" prefWidth="122.66668701171875" text="Name" />
+            <TableColumn fx:id="colcategory" prefWidth="151.33334350585938" text="category" />
+            <TableColumn fx:id="colquantity" prefWidth="78.6666259765625" text="quantity" />
+            <TableColumn fx:id="colsize" prefWidth="37.33331298828125" text="size" />
+            <TableColumn fx:id="colsupplier" prefWidth="83.33331298828125" text="supplier" />
          </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="349.0" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Refresh" />
+      <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="349.0" onAction="#btnrefresh" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Refresh" />
    </children>
 </AnchorPane>
