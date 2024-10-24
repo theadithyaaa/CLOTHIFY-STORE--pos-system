@@ -3,7 +3,13 @@ package controller;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class inventory_managementController {
 
@@ -60,4 +66,15 @@ public class inventory_managementController {
 
     }
 
+    public void btnback(ActionEvent event) {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/employee_dashboard.fxml"));
+            currentStage.setScene(new Scene(loader.load()));
+            currentStage.setTitle("Employee Dashboard  ");
+        } catch (IOException e) {
+
+        }
+    }
 }

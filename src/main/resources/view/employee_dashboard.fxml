@@ -36,13 +36,13 @@
       <Label layoutX="34.0" layoutY="235.0" text="password setting" />
       <JFXPasswordField fx:id="txtnewpassword" layoutX="38.0" layoutY="261.0" prefHeight="25.0" prefWidth="230.0" promptText="new password" />
       <JFXPasswordField fx:id="txtconfirmnewpassword" layoutX="38.0" layoutY="301.0" prefHeight="25.0" prefWidth="230.0" promptText="confirm new password" />
-      <JFXButton fx:id="btnchangepassword" layoutX="168.0" layoutY="333.0" text="change password" textFill="#2900ff" underline="true" />
+      <JFXButton layoutX="168.0" layoutY="333.0" onAction="#btnchangepassword" text="change password" textFill="#2900ff" underline="true" />
       <ImageView blendMode="DARKEN" fitHeight="67.0" fitWidth="57.0" layoutX="366.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/inventory_icon.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btninventory" layoutX="423.0" layoutY="116.0" prefHeight="25.0" prefWidth="109.0" text="Inventory">
+      <JFXButton layoutX="423.0" layoutY="116.0" onAction="#btninventory" prefHeight="25.0" prefWidth="109.0" text="Inventory">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -52,7 +52,7 @@
             <Image url="@../images/supplier_icon.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnsuppliers" layoutX="423.0" layoutY="211.0" prefHeight="25.0" prefWidth="109.0" text="Suppliers">
+      <JFXButton layoutX="423.0" layoutY="211.0" onAction="#btnsuppliers" prefHeight="25.0" prefWidth="109.0" text="Suppliers">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>
@@ -62,7 +62,7 @@
             <Image url="@../images/order_icon.png" />
          </image>
       </ImageView>
-      <JFXButton fx:id="btnorders" layoutX="423.0" layoutY="304.0" prefHeight="36.0" prefWidth="90.0" text="Orders">
+      <JFXButton layoutX="423.0" layoutY="304.0" onAction="#btnorders" prefHeight="36.0" prefWidth="90.0" text="Orders">
          <font>
             <Font name="System Bold" size="16.0" />
          </font>

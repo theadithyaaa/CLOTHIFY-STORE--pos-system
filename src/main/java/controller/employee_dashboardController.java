@@ -1,24 +1,17 @@
 package controller;
 
-import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 
 public class employee_dashboardController {
-
-    @FXML
-    private JFXButton btnchangepassword;
-
-    @FXML
-    private JFXButton btninventory;
-
-    @FXML
-    private JFXButton btnorders;
-
-    @FXML
-    private JFXButton btnsuppliers;
 
     @FXML
     private Label txtcompany;
@@ -38,4 +31,49 @@ public class employee_dashboardController {
     @FXML
     private Label txtusername;
 
+    @FXML
+    void btnchangepassword(ActionEvent event) {
+
+    }
+
+    @FXML
+    void btninventory(ActionEvent event) {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/inventory_management.fxml"));
+            currentStage.setScene(new Scene(loader.load()));
+            currentStage.setTitle("Inventory Management ");
+        } catch (IOException e) {
+
+        }
+    }
+
+    @FXML
+    void btnorders(ActionEvent event) {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/orders_management.fxml"));
+            currentStage.setScene(new Scene(loader.load()));
+            currentStage.setTitle("Orders Management ");
+        } catch (IOException e) {
+
+        }
+
+    }
+
+    @FXML
+    void btnsuppliers(ActionEvent event) {
+        Stage currentStage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/supplier_management.fxml"));
+            currentStage.setScene(new Scene(loader.load()));
+            currentStage.setTitle("Supllier Management ");
+        } catch (IOException e) {
+
+        }
+
+    }
 }

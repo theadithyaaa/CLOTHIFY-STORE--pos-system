@@ -57,5 +57,10 @@
       <JFXTextField fx:id="txtcusid" layoutX="46.0" layoutY="229.0" prefHeight="25.0" prefWidth="115.0" promptText="item name" text="customer id" />
       <JFXTextField fx:id="txtcusname" layoutX="181.0" layoutY="229.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="customer name" />
       <JFXTextField fx:id="txtquantity" layoutX="431.0" layoutY="140.0" prefHeight="25.0" prefWidth="115.0" promptText="item name" text="quantity" />
+      <JFXButton buttonType="RAISED" layoutX="555.0" onAction="#btnback" style="-fx-background-radius: 50;" text="⬅">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

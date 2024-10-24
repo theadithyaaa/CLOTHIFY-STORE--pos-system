@@ -9,10 +9,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @AllArgsConstructor
-public class orders {
+public class Employee {
     private String id;
-    private String item;
-    private Double price;
-    private String paytype;
-    private Integer quantity;
+    private String name;
+    private String email;
+    private String contact;
+    private String company;
+
 }

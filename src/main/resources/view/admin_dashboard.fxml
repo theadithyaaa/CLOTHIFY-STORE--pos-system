@@ -32,7 +32,7 @@
       <JFXTextField fx:id="txtcompany" layoutX="35.0" layoutY="245.0" prefHeight="25.0" prefWidth="285.0" promptText="password" text="company" />
       <JFXButton buttonType="RAISED" layoutX="387.0" layoutY="85.0" onAction="#btnregister" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Register" />
       <JFXButton buttonType="RAISED" layoutX="387.0" layoutY="162.0" onAction="#btnremove" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Remove" />
-      <TableView layoutX="486.0" layoutY="64.0" prefHeight="253.0" prefWidth="563.0">
+      <TableView fx:id="tblemployee" layoutX="486.0" layoutY="64.0" prefHeight="253.0" prefWidth="563.0">
         <columns>
           <TableColumn fx:id="colid" prefWidth="46.6666259765625" text="Id" />
           <TableColumn fx:id="colname" prefWidth="146.0" text="Name" />
@@ -56,8 +56,8 @@
       <JFXButton buttonType="RAISED" layoutX="387.0" layoutY="402.0" onAction="#btninventoryupdate" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="update" />
       <TableView layoutX="486.0" layoutY="346.0" prefHeight="253.0" prefWidth="563.0">
          <columns>
-            <TableColumn fx:id="colid" prefWidth="44.000030517578125" text="Id" />
-            <TableColumn fx:id="colname" prefWidth="134.0" text="Name" />
+            <TableColumn fx:id="colitemid" prefWidth="44.000030517578125" text="Id" />
+            <TableColumn fx:id="colitemname" prefWidth="134.0" text="Name" />
             <TableColumn fx:id="colcategory" prefWidth="140.0" text="category" />
             <TableColumn fx:id="colquantity" prefWidth="78.6666259765625" text="quantity" />
             <TableColumn fx:id="colsize" prefWidth="48.0" text="size" />
@@ -65,5 +65,10 @@
          </columns>
       </TableView>
       <JFXButton buttonType="RAISED" layoutX="945.0" layoutY="601.0" onAction="#btninvrefresh" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Refresh" />
+      <JFXButton buttonType="RAISED" layoutX="1016.0" layoutY="5.0" onAction="#btnback" style="-fx-background-radius: 50;" text="⬅">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>

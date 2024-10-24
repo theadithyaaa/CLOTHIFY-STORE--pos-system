@@ -1,4 +1,7 @@
 package repository.custom;
 
-public interface LoginDao {
+import entity.LoginEntity;
+import repository.CrudRepository;
+
+public interface LoginDao extends CrudRepository<LoginEntity> {
 }

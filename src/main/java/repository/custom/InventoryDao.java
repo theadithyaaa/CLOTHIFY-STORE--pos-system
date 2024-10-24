@@ -1,4 +1,7 @@
 package repository.custom;
 
-public interface InventoryDao {
+import entity.InventoryEntity;
+import repository.CrudRepository;
+
+public interface InventoryDao extends CrudRepository<InventoryEntity> {
 }

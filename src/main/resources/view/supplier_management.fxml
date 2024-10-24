@@ -41,5 +41,10 @@
          </columns>
       </TableView>
       <JFXButton buttonType="RAISED" layoutX="737.0" layoutY="381.0" onAction="#btnrefresh" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Refresh" />
+      <JFXButton buttonType="RAISED" layoutX="816.0" onAction="#btnback" style="-fx-background-radius: 50;" text="⬅">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
