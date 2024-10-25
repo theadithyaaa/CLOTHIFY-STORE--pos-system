@@ -12,7 +12,7 @@ import lombok.ToString;
 public class Orders {
     private String id;
     private String item;
-    private Double price;
-    private String paytype;
-    private Integer quantity;
+    private String price;
+    private String name;
+    private String quantity;
 }

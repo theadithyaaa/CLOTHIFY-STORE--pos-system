@@ -47,10 +47,9 @@
           <TableColumn fx:id="colid" prefWidth="75.0" text="order id" />
           <TableColumn fx:id="colcode" prefWidth="75.0" text="item code" />
             <TableColumn fx:id="colcus" prefWidth="102.6666259765625" text="customer" />
-            <TableColumn fx:id="colprice" prefWidth="60.00006103515625" text="price" />
-            <TableColumn fx:id="colpayment" prefWidth="62.0" text="payment" />
-            <TableColumn fx:id="colquantiy" prefWidth="56.6666259765625" text="quantity" />
-            <TableColumn fx:id="coltotal" prefWidth="70.0" text="total" />
+            <TableColumn fx:id="colprice" prefWidth="86.0" text="price" />
+            <TableColumn fx:id="colquantiy" prefWidth="53.33331298828125" text="quantity" />
+            <TableColumn fx:id="coltotal" prefWidth="108.6666259765625" text="total" />
         </columns>
       </TableView>
       <JFXButton buttonType="RAISED" layoutX="522.0" layoutY="413.0" onAction="#btnrefresh" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="refresh" />

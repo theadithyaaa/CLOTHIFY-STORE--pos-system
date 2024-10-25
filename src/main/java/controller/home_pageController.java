@@ -41,5 +41,18 @@ public class home_pageController {
 
         }
     }
+
+    public void btnCreate(ActionEvent actionEvent) {
+        Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/create_account.fxml"));
+            currentStage.setScene(new Scene(loader.load()));
+            currentStage.setTitle(" create account");
+        } catch (IOException e) {
+
+        }
+
+    }
 }
 

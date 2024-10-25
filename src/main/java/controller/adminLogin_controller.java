@@ -9,11 +9,14 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class adminLogin_controller {
+    @FXML
+    private AnchorPane scenepane;
     @FXML
     private JFXPasswordField txtadminpassword;
 
@@ -22,10 +25,10 @@ public class adminLogin_controller {
 
     @FXML
     void btnLogin(ActionEvent actionEvent) {
-        Stage stage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Stage stage = (Stage) scenepane.getScene().getWindow();
 
         try {
-            stage.setScene( FXMLLoader.load(getClass().getResource("../view/admin_dashboard.fxml")));
+            stage.setScene( new Scene(FXMLLoader.load(getClass().getResource("../view/employee_dashboard.fxml"))));
             stage.setTitle("admin dashboard");
             stage.show();
         } catch (IOException e) {

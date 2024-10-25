@@ -41,7 +41,7 @@
             <Font name="System Italic" size="23.0" />
          </font>
       </Label>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff48" height="144.0" layoutX="203.0" layoutY="177.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff48" height="164.0" layoutX="203.0" layoutY="177.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="200.0" />
       <Label layoutX="269.0" layoutY="191.0" text="continue as" />
       <JFXButton buttonType="RAISED" layoutX="255.0" layoutY="222.0" onAction="#btnAdmin" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Admin" />
       <JFXButton buttonType="RAISED" layoutX="255.0" layoutY="264.0" onAction="#btnEmployee" prefHeight="25.0" prefWidth="90.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Employee" />
@@ -49,5 +49,6 @@
       <Label layoutX="237.0" layoutY="374.0" text="Clothify store (PVT) Ltd." />
       <Label layoutX="448.0" layoutY="374.0" text="clothify_store@gmail.com" />
       <Label layoutX="14.0" layoutY="374.0" text="+94 123 456 789 " />
+      <JFXButton layoutX="256.0" layoutY="308.0" onAction="#btnCreate" text="create account" textFill="#3538ed" underline="true" />
    </children>
 </AnchorPane>

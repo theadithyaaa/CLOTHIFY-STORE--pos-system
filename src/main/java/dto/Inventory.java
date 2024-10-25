@@ -14,5 +14,5 @@ public class Inventory {
     private String name;
     private String category;
     private String size;
-    private Integer quantity;
+    private String quantity;
 }

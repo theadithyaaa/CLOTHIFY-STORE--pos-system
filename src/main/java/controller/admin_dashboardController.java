@@ -4,7 +4,9 @@ package controller;
 import Util.ServiceType;
 import com.jfoenix.controls.JFXTextField;
 import dto.Employee;
-import javafx.collections.ObservableList;
+import dto.Inventory;
+import dto.Login;
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -15,20 +17,17 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import service.ServiceFactory;
 import service.custom.EmployeeService;
-
+import service.custom.InventoryService;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class admin_dashboardController implements Initializable {
-
-    @FXML
-    private TableView<Employee> tblEmployees;
-
     @FXML
     private TableColumn<?, ?> colcategory;
 
@@ -45,6 +44,12 @@ public class admin_dashboardController implements Initializable {
     private TableColumn<?, ?> colid;
 
     @FXML
+    private TableColumn<?, ?> colitemid;
+
+    @FXML
+    private TableColumn<?, ?> colitemname;
+
+    @FXML
     private TableColumn<?, ?> colname;
 
     @FXML
@@ -55,6 +60,15 @@ public class admin_dashboardController implements Initializable {
 
     @FXML
     private TableColumn<?, ?> colsupplier;
+
+    @FXML
+    private AnchorPane scenepane;
+
+    @FXML
+    private TableView<Employee> tblEmployees;
+
+    @FXML
+    private TableView<Inventory> tblInventory;
 
     @FXML
     private JFXTextField txt_empid;
@@ -75,6 +89,9 @@ public class admin_dashboardController implements Initializable {
     private JFXTextField txtempname;
 
     @FXML
+    private JFXTextField txtinventoryid;
+
+    @FXML
     private JFXTextField txtinventoryname;
 
     @FXML
@@ -83,11 +100,9 @@ public class admin_dashboardController implements Initializable {
     @FXML
     private JFXTextField txtsize;
 
-    @FXML
-    private JFXTextField txtsupplier;
+    EmployeeService employeeservice = ServiceFactory.getInstance().getServiceType(ServiceType.EMPLOYEE);
+    InventoryService inventoryservice = ServiceFactory.getInstance().getServiceType(ServiceType.INVENTORY);
 
-    EmployeeService service = ServiceFactory.getInstance().getServiceType(ServiceType.EMPLOYEE);
-    //dan balapan
 
     @FXML
     void btnemprefresh(ActionEvent event) {
@@ -97,15 +112,44 @@ public class admin_dashboardController implements Initializable {
     @FXML
     void btninventoryadd(ActionEvent event) {
 
+        Inventory inventory = new Inventory(
+                txtinventoryid.getText(),
+                txtcategory.getText(),
+                txtsize.getText(),
+                txtquantity.getText(),
+                txtinventoryname.getText()
+        );
+
+        if (inventoryservice.addInventory(inventory)) {
+            new Alert(Alert.AlertType.INFORMATION, "Product Added Successfully!").show();
+            setTextToEmpty();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Failed to Add Product!").show();
+        }
+        loadTable();
+
     }
 
     @FXML
     void btninventoryremove(ActionEvent event) {
+        inventoryservice.deleteInventory(txtinventoryid.getText());
+        loadTable();
+        setTextToEmpty();
 
     }
 
     @FXML
     void btninventoryupdate(ActionEvent event) {
+        Inventory inventory = new Inventory(
+                txtinventoryid.getText(),
+                txtinventoryname.getText(),
+                txtcategory.getText(),
+                txtsize.getText(),
+                txtquantity.getText()
+        );
+        inventoryservice.updateInventory(inventory);
+        loadTable();
+        setTextToEmpty();
 
     }
 
@@ -116,12 +160,23 @@ public class admin_dashboardController implements Initializable {
 
     @FXML
     void btnremove(ActionEvent event) {
-
+        employeeservice.deleteEmployee(txt_empid.getText());
+        loadTable();
+        setTextToEmpty();
     }
 
     @FXML
     void btnupdate(ActionEvent event) {
-
+        Employee employee = new Employee(
+                txt_empid.getText(),
+                txtempname.getText(),
+                txtemail.getText(),
+                txtcontact.getText(),
+                txtcompany.getText()
+        );
+        employeeservice.updateEmployee(employee);
+        loadTable();
+        setTextToEmpty();
     }
 
     public void btnback(ActionEvent actionEvent) {
@@ -137,7 +192,6 @@ public class admin_dashboardController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-//        colid.setText(service.generateId());
         colid.setCellValueFactory(new PropertyValueFactory<>("id"));
         colname.setCellValueFactory(new PropertyValueFactory<>("name"));
         colcompany.setCellValueFactory(new PropertyValueFactory<>("company"));
@@ -149,6 +203,19 @@ public class admin_dashboardController implements Initializable {
                 setTextToValues(newValue);
             }
         }));
+
+        colitemid.setCellValueFactory(new PropertyValueFactory<>("id"));
+        colitemname.setCellValueFactory(new PropertyValueFactory<>("name"));
+        colcategory.setCellValueFactory(new PropertyValueFactory<>("category"));
+        colquantity.setCellValueFactory(new PropertyValueFactory<>("quantity"));
+        colsize.setCellValueFactory(new PropertyValueFactory<>("size"));
+        tblInventory.getSelectionModel().selectedItemProperty().addListener(((observableValue, oldValue, newValue) ->
+        {
+            if (null != newValue) {
+                setTextToValues2((Inventory) newValue);
+            }
+        }));
+
         loadTable();
     }
 
@@ -161,13 +228,13 @@ public class admin_dashboardController implements Initializable {
                 txtcompany.getText()
         );
 
-        if (service.addEmployee(employee)) {
-            new Alert(Alert.AlertType.INFORMATION, "Employee Updated Successfully!").show();
+        if (employeeservice.addEmployee(employee)) {
+            new Alert(Alert.AlertType.INFORMATION, "Employee Added Successfully!").show();
             setTextToEmpty();
         } else {
-            new Alert(Alert.AlertType.ERROR, "Failed to Update Employee!").show();
+            new Alert(Alert.AlertType.ERROR, "Failed to Added Employee!").show();
         }
-        loadTable();//
+        loadTable();
     }
 
     private void setTextToValues(Employee newValue) {
@@ -179,19 +246,34 @@ public class admin_dashboardController implements Initializable {
     }
 
     private void setTextToEmpty() {
+        txt_empid.setText("");
         txtempname.setText("");
         txtcompany.setText("");
         txtemail.setText("");
         txtcontact.setText("");
+        txtsize.setText("");
+        txtquantity.setText("");
+        txtinventoryname.setText("");
+        txtinventoryid.setText("");
+        txtcategory.setText("");
     }
 
     private void loadTable(){
         try{
-            ObservableList<Employee> employeesList = service.getAll();
-            tblEmployees.setItems(employeesList);
+            tblEmployees.setItems(FXCollections.observableArrayList(employeeservice.getAll()));
+            tblInventory.setItems(FXCollections.observableArrayList(inventoryservice.getAll()));
         }catch (NullPointerException e){
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
     }
 
+    private void setTextToValues2(Inventory newValue) {
+        txtinventoryid.setText(newValue.getId());
+        txtinventoryname.setText(newValue.getName());
+        txtcategory.setText(newValue.getCategory());
+        txtquantity.setText(newValue.getQuantity());
+        txtsize.setText(newValue.getSize());
+    }
+
 }
+

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="backgroundColor" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminLogin_controller">
+<AnchorPane fx:id="scenepane" prefHeight="400.0" prefWidth="600.0" styleClass="backgroundColor" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.adminLogin_controller">
    <children>
       <Label layoutX="187.0" layoutY="32.0" text="Clothify">
          <font>

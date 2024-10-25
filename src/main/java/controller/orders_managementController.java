@@ -2,6 +2,7 @@ package controller;
 
 import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
+import dto.Orders;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -65,6 +66,14 @@ public class orders_managementController {
 
     @FXML
     void btnorder(ActionEvent event) {
+
+        Orders orders = new Orders(
+                txtitemcode.getText(),
+                txtquantity.getText(),
+                txtprice.getText(),
+                txtname.getText(),
+                txttotal.getText()
+        );
 
     }
 

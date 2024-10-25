@@ -24,24 +24,34 @@ public class EmployeeDaoImpl implements EmployeeDao {
                 transaction.rollback();
                 sqlException.printStackTrace();
             }
-        }finally{//oya widihata session ekai transacction ekai hadala delete update search(remove, merge, get) tikath karanna thiyenne
-            //hari neda ? uba ko ?innawa pahadilida?o sudu
+        }finally{
             session.close();
         }
         return false;    }
 
     @Override
     public boolean delete(String id) {
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+        session.remove(session.get(EmployeeEntity.class,id));
+        session.getTransaction().commit();
+        session.close();
         return false;
     }
 
     @Override
     public List<EmployeeEntity> getAll() {
-        return List.of();
+        Session session = HibernateUtil.getSession();
+        return session.createQuery("from Employee",EmployeeEntity.class).getResultList();
     }
 
     @Override
     public boolean update(EmployeeEntity employeeEntity) {
+        Session session = HibernateUtil.getSession();
+        session.beginTransaction();
+        session.merge(employeeEntity.getId(),employeeEntity);
+        session.getTransaction().commit();
+        session.close();
         return false;
     }
 

@@ -7,12 +7,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class employeeLogin_controller {
 
+    public AnchorPane scenepane;
     @FXML
     private JFXPasswordField txtemppassword;
 
@@ -30,13 +32,14 @@ public class employeeLogin_controller {
     }
 
     public void btnback(ActionEvent actionEvent) {
-        Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+        Stage stage = (Stage) scenepane.getScene().getWindow();
 
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/home_page.fxml"));
-            currentStage.setScene(new Scene(loader.load()));
-            currentStage.setTitle("Home page");
+            stage.setScene( new Scene(FXMLLoader.load(getClass().getResource("../view/employee_dashboard.fxml"))));
+            stage.setTitle("employee dashboard");
+            stage.show();
         } catch (IOException e) {
+            e.printStackTrace();
 
         }
     }

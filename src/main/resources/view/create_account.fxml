@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" styleClass="backgroundColor" stylesheets="@../style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.create_accountController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff51" height="200.0" layoutX="133.0" layoutY="88.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="339.0" />
+      <JFXTextField fx:id="txtemail" layoutX="164.0" layoutY="120.0" prefHeight="29.0" prefWidth="272.0" promptText="email" />
+      <JFXPasswordField fx:id="txtpassword" layoutX="167.0" layoutY="175.0" prefHeight="25.0" prefWidth="272.0" promptText="password" />
+      <JFXButton layoutX="253.0" layoutY="241.0" onAction="#btncreateAccount" style="-fx-background-color: #90EE90; -fx-background-radius: 20;" text="create account" />
+      <JFXButton buttonType="RAISED" onAction="#btnback" style="-fx-background-radius: 50;" text="⬅">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
