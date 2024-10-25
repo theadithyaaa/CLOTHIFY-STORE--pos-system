@@ -7,6 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
@@ -22,10 +23,11 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 
-public class inventory_managementController {
-
-    public JFXTextField txtid;
-    public TableView<Inventory> tblInventory;
+public class inventory_managementController implements Initializable {
+    @FXML
+    private JFXTextField txtid;
+    @FXML
+    private TableView<Inventory> tblInventory;
     @FXML
     private TableColumn<?, ?> colcategory;
 
@@ -97,11 +99,25 @@ public class inventory_managementController {
 
     @FXML
     void btnremoveinventory(ActionEvent event) {
+        inventoryservice.deleteInventory(txtid.getText());
+        loadTable();
+        setTextToEmpty();
+
 
     }
 
     @FXML
     void btnupdateinventory(ActionEvent event) {
+        Inventory inventory = new Inventory(
+                txtid.getText(),
+                txtitemname.getText(),
+                txtcategory.getText(),
+                txtsize.getText(),
+                txtquantity.getText()
+        );
+        inventoryservice.updateInventory(inventory);
+        loadTable();
+        setTextToEmpty();
 
     }
 

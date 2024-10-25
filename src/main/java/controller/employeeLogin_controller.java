@@ -13,8 +13,8 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class employeeLogin_controller {
-
-    public AnchorPane scenepane;
+    @FXML
+    private AnchorPane scenepane;
     @FXML
     private JFXPasswordField txtemppassword;
 
@@ -23,15 +23,6 @@ public class employeeLogin_controller {
 
     @FXML
     void btnLogin(ActionEvent event) {
-
-    }
-
-    @FXML
-    void btnemppasswordrecover(ActionEvent event) {
-
-    }
-
-    public void btnback(ActionEvent actionEvent) {
         Stage stage = (Stage) scenepane.getScene().getWindow();
 
         try {
@@ -42,5 +33,15 @@ public class employeeLogin_controller {
             e.printStackTrace();
 
         }
+
+    }
+
+    @FXML
+    void btnemppasswordrecover(ActionEvent event) {
+
+    }
+    @FXML
+     void btnback(ActionEvent actionEvent) {
+
     }
 }

@@ -12,8 +12,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @ToString
 @AllArgsConstructor
-@Entity
-@Table(name = "Login")
+@Entity(name = "Login")
 public class LoginEntity {
     @Id
     private String email;

@@ -1,5 +1,6 @@
 package controller;
 
+import Util.ServiceType;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import dto.Login;
@@ -10,6 +11,10 @@ import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.stage.Stage;
+import service.ServiceFactory;
+import service.custom.EmployeeService;
+import service.custom.LoginService;
+import service.custom.impl.LoginServiceImpl;
 
 import java.io.IOException;
 import java.util.regex.Matcher;
@@ -22,6 +27,9 @@ public class create_accountController {
 
     @FXML
     private JFXPasswordField txtpassword;
+
+    LoginService loginService = ServiceFactory.getInstance().getServiceType(ServiceType.LOGIN);
+
 
     @FXML
      void btnback(ActionEvent event) {
@@ -52,13 +60,18 @@ public class create_accountController {
         } else if (!mpassword.matches()) {
             new Alert(Alert.AlertType.ERROR,"To weak").show();
         }else {
-            new Alert(Alert.AlertType.INFORMATION,"Registered Successfully").show();
+            Login login = new Login(
+                    txtpassword.getText(),
+                    txtemail.getText()
+
+            );
+            if(loginService.addLogin(login)){
+                new Alert(Alert.AlertType.INFORMATION," Account created & Registered Successfully").show();
+            }
         }
 
-        Login login = new Login(
-                txtpassword.getText(),
-                txtemail.getText()
-        );
+
+
         
 
     }

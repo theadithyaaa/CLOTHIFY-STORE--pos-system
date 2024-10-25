@@ -24,23 +24,21 @@
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff48" height="318.0" layoutX="20.0" layoutY="98.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="317.0" />
-      <JFXTextField fx:id="txtsuppliername" layoutX="49.0" layoutY="156.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="supplier name" />
-      <JFXTextField fx:id="txtcompnay" layoutX="49.0" layoutY="194.0" prefHeight="25.0" prefWidth="220.0" promptText="q" text="company" />
-      <JFXTextField fx:id="txtemail" layoutX="49.0" layoutY="232.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="email" />
-      <JFXTextField fx:id="txtitmcode" layoutX="49.0" layoutY="278.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="item code" />
+      <JFXTextField fx:id="txtsuppliername" layoutX="68.0" layoutY="207.0" prefHeight="25.0" prefWidth="220.0" promptText="name" />
+      <JFXTextField fx:id="txtcompnay" layoutX="68.0" layoutY="257.0" prefHeight="25.0" prefWidth="220.0" promptText="company" />
+      <JFXTextField fx:id="txtemail" layoutX="68.0" layoutY="310.0" prefHeight="25.0" prefWidth="220.0" promptText="email" />
+      <JFXTextField fx:id="txtid" layoutX="68.0" layoutY="147.0" prefHeight="25.0" prefWidth="220.0" promptText="id" />
       <JFXButton buttonType="RAISED" layoutX="49.0" layoutY="369.0" onAction="#btnaddsupplier" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Add" />
       <JFXButton buttonType="RAISED" layoutX="139.0" layoutY="369.0" onAction="#btnupdtesupplier" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="update" />
       <JFXButton buttonType="RAISED" layoutX="230.0" layoutY="369.0" onAction="#btnremovesupplier" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: red; -fx-background-radius: 15;" text="Remove" />
-      <TableView layoutX="346.0" layoutY="96.0" prefHeight="272.0" prefWidth="493.0">
+      <TableView fx:id="tblsupplier" layoutX="346.0" layoutY="96.0" prefHeight="272.0" prefWidth="493.0">
          <columns>
             <TableColumn fx:id="colid" prefWidth="44.000030517578125" text="Id" />
             <TableColumn fx:id="colname" prefWidth="144.00006103515625" text="Name" />
-            <TableColumn fx:id="colcompany" prefWidth="123.99993896484375" text="company" />
-            <TableColumn fx:id="colemail" prefWidth="86.00006103515625" text="email" />
-            <TableColumn fx:id="colitem" prefWidth="94.00006103515625" text="item" />
+            <TableColumn fx:id="colcompany" prefWidth="141.33331298828125" text="company" />
+            <TableColumn fx:id="colemail" prefWidth="162.00006103515625" text="email" />
          </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="737.0" layoutY="381.0" onAction="#btnrefresh" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Refresh" />
       <JFXButton buttonType="RAISED" layoutX="816.0" onAction="#btnback" style="-fx-background-radius: 50;" text="⬅">
          <font>
             <Font size="20.0" />

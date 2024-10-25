@@ -39,7 +39,8 @@ public class LoginDaoImpl implements LoginDao {
 
     @Override
     public List<LoginEntity> getAll() {
-        return List.of();
+        Session session = HibernateUtil.getSession();
+        return session.createQuery("from Login",LoginEntity.class).getResultList();
     }
 
     @Override
@@ -50,5 +51,11 @@ public class LoginDaoImpl implements LoginDao {
     @Override
     public LoginEntity search(String id) {
         return null;
+    }
+
+    @Override
+    public LoginEntity getLogin(String email) {
+        Session session = HibernateUtil.getSession();
+        return session.get(LoginEntity.class,email);
     }
 }

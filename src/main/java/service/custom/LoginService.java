@@ -12,5 +12,6 @@ public interface LoginService extends SuperService {
     List<Login> getAll();
     ObservableList<String> getLoginIds();
     String generateId ();
+    Login getLogin(String email);
 
 }
