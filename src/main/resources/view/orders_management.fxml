@@ -25,9 +25,9 @@
          </font>
       </Label>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff48" height="188.0" layoutX="17.0" layoutY="82.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" style="-fx-arc-height: 20; -fx-arc-width: 20;" width="564.0" />
-      <JFXTextField fx:id="txtitemcode" layoutX="46.0" layoutY="140.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="item code" />
-      <JFXTextField fx:id="txtprice" layoutX="291.0" layoutY="140.0" prefHeight="25.0" prefWidth="115.0" promptText="item name" text="price (Rs)" />
-      <JFXTextField fx:id="txtname" layoutX="46.0" layoutY="187.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="item " />
+      <JFXTextField fx:id="txtitemcode" layoutX="46.0" layoutY="140.0" prefHeight="25.0" prefWidth="220.0" promptText="item code" />
+      <JFXTextField fx:id="txtprice" layoutX="291.0" layoutY="140.0" prefHeight="25.0" prefWidth="115.0" promptText="price (Rs)" />
+      <JFXTextField fx:id="txtname" layoutX="46.0" layoutY="187.0" prefHeight="25.0" prefWidth="220.0" promptText="item " />
       <JFXButton buttonType="RAISED" layoutX="483.0" layoutY="229.0" onAction="#btnorder" prefHeight="25.0" prefWidth="78.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Order" />
       <Label layoutX="291.0" layoutY="191.0" text="payment type :" />
       <JFXRadioButton fx:id="btncash" layoutX="369.0" layoutY="192.0" text="cash" />
@@ -42,20 +42,20 @@
             <Font name="System Bold" size="13.0" />
          </font>
       </Label>
-      <TableView layoutX="17.0" layoutY="282.0" prefHeight="157.0" prefWidth="502.0">
+      <TableView fx:id="tblOrders" layoutX="15.0" layoutY="280.0" prefHeight="157.0" prefWidth="502.0">
         <columns>
           <TableColumn fx:id="colid" prefWidth="75.0" text="order id" />
           <TableColumn fx:id="colcode" prefWidth="75.0" text="item code" />
-            <TableColumn fx:id="colcus" prefWidth="102.6666259765625" text="customer" />
+            <TableColumn fx:id="colitemname" prefWidth="102.6666259765625" text="Item" />
             <TableColumn fx:id="colprice" prefWidth="86.0" text="price" />
             <TableColumn fx:id="colquantiy" prefWidth="53.33331298828125" text="quantity" />
             <TableColumn fx:id="coltotal" prefWidth="108.6666259765625" text="total" />
         </columns>
       </TableView>
       <JFXButton buttonType="RAISED" layoutX="522.0" layoutY="413.0" onAction="#btnrefresh" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="refresh" />
-      <JFXTextField fx:id="txtcusid" layoutX="46.0" layoutY="229.0" prefHeight="25.0" prefWidth="115.0" promptText="item name" text="customer id" />
-      <JFXTextField fx:id="txtcusname" layoutX="181.0" layoutY="229.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" text="customer name" />
-      <JFXTextField fx:id="txtquantity" layoutX="431.0" layoutY="140.0" prefHeight="25.0" prefWidth="115.0" promptText="item name" text="quantity" />
+      <JFXTextField fx:id="txtcusid" layoutX="46.0" layoutY="229.0" prefHeight="25.0" prefWidth="115.0" promptText="customer id" />
+      <JFXTextField fx:id="txtitemname" layoutX="181.0" layoutY="229.0" prefHeight="25.0" prefWidth="220.0" promptText="item name" />
+      <JFXTextField fx:id="txtquantity" layoutX="431.0" layoutY="140.0" prefHeight="25.0" prefWidth="115.0" promptText="quantity" />
       <JFXButton buttonType="RAISED" layoutX="555.0" onAction="#btnback" style="-fx-background-radius: 50;" text="⬅">
          <font>
             <Font size="20.0" />

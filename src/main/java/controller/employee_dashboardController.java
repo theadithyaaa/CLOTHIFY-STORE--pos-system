@@ -76,4 +76,16 @@ public class employee_dashboardController {
         }
 
     }
+
+    public void btnback(ActionEvent actionEvent) {
+        Stage currentStage = (Stage) ((Node) actionEvent.getSource()).getScene().getWindow();
+
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("../view/employeeLogin_page.fxml"));
+            currentStage.setScene(new Scene(loader.load()));
+            currentStage.setTitle("Employee login");
+        } catch (IOException e) {
+
+        }
+    }
 }

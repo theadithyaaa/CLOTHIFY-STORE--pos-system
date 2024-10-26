@@ -15,4 +15,5 @@ public class Orders {
     private String price;
     private String name;
     private String quantity;
+    private String total;
 }

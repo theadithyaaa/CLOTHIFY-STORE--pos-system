@@ -110,7 +110,6 @@ public class supplier_managementController implements Initializable {
 
     @FXML
     void btnremovesupplier(ActionEvent event) {
-        System.out.println("ah patiyo" + txtid.getText());
         supplierService.deleteSupplier(txtid.getText());
         loadTable();
         setTextToEmpty();
@@ -122,8 +121,8 @@ public class supplier_managementController implements Initializable {
         Supplier supplier = new Supplier(
                 txtid.getText(),
                 txtsuppliername.getText(),
-                txtemail.getText(),
-                txtcompnay.getText()
+                txtcompnay.getText(),
+                txtemail.getText()
 
         );
         supplierService.updateSupplier(supplier);

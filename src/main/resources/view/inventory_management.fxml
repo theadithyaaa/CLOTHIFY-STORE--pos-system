@@ -36,10 +36,9 @@
          <columns>
             <TableColumn fx:id="colid" prefWidth="44.000030517578125" text="Id" />
             <TableColumn fx:id="colname" prefWidth="122.66668701171875" text="Name" />
-            <TableColumn fx:id="colcategory" prefWidth="151.33334350585938" text="category" />
-            <TableColumn fx:id="colquantity" prefWidth="78.6666259765625" text="quantity" />
-            <TableColumn fx:id="colsize" prefWidth="37.33331298828125" text="size" />
-            <TableColumn fx:id="colsupplier" prefWidth="83.33331298828125" text="supplier" />
+            <TableColumn fx:id="colcategory" prefWidth="196.66671752929688" text="category" />
+            <TableColumn fx:id="colquantity" prefWidth="87.33331298828125" text="quantity" />
+            <TableColumn fx:id="colsize" prefWidth="68.66668701171875" text="size" />
          </columns>
       </TableView>
       <JFXButton buttonType="RAISED" layoutX="759.0" layoutY="349.0" onAction="#btnrefresh" prefHeight="25.0" prefWidth="103.0" style="-fx-background-color: #90EE90; -fx-background-radius: 15;" text="Refresh" />

@@ -67,5 +67,10 @@
             <Font name="System Bold" size="16.0" />
          </font>
       </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="610.0" layoutY="-3.0" onAction="#btnback" style="-fx-background-radius: 50;" text="⬅">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </JFXButton>
    </children>
 </AnchorPane>
